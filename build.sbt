@@ -20,7 +20,7 @@ scmInfo := Some(
 )
 
 /* scala versions and options */
-scalaVersion := "2.10.1"
+scalaVersion := "2.10.2"
 
 // These options will be used for *all* versions.
 scalacOptions ++= Seq(
@@ -34,6 +34,8 @@ scalacOptions ++= Seq(
   "-Yclosure-elim",
   "-Yinline"
 )
+
+scalacOptions += "-target:jvm-1.6"
 
 // These language flags will be used only for 2.10.x.
 // Uncomment those you need, or if you hate SIP-18, all of them.
