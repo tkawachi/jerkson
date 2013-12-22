@@ -1,21 +1,21 @@
 /* basic project info */
 name := "jerkson"
 
-organization := "org.cphylabs"
+organization := "com.github.tkawachi"
 
-version := "0.6.4-SNAPSHOT"
+version := "0.6.4"
 
 licenses := Seq(
-  ("The MIT License", url("http://codahale.com/mit.txt"))
+  ("MIT", url("http://codahale.com/mit.txt"))
 )
 
-homepage := Some(url("https://github.com/cphylabs/jerkson"))
+homepage := Some(url("https://github.com/tkawachi/jerkson"))
 
 scmInfo := Some(
   ScmInfo(
-    url("https://github.com/cphylabs/jerkson"),
-    "scm:git:https://github.com/cphylabs/jerkson.git",
-    Some("scm:git:git@github.com:cphylabs/jerkson.git")
+    url("https://github.com/tkawachi/jerkson"),
+    "scm:git:https://github.com/tkawachi/jerkson.git",
+    Some("scm:git:git@github.com:tkawachi/jerkson.git")
   )
 )
 
@@ -81,26 +81,4 @@ traceLevel := 5
 offline := false
 
 /* publishing */
-publishMavenStyle := true
-
-publishTo <<= version { (v: String) =>
-  val nexus = "https://oss.sonatype.org/"
-  if (v.trim.endsWith("SNAPSHOT")) Some(
-    "snapshots" at nexus + "content/repositories/snapshots"
-  )
-  else Some("releases" at nexus + "service/local/staging/deploy/maven2")
-}
-
-publishArtifact in Test := false
-
-pomIncludeRepository := { _ => false }
-
-pomExtra := (
-  <developers>
-    <developer>
-      <id>cphylabs</id>
-      <name>CloudPhysics Inc</name>
-      <email>opensource@cloudphysics.com</email>
-    </developer>
-  </developers>
-)
+seq(bintrayPublishSettings:_*)
