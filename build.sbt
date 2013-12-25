@@ -3,7 +3,7 @@ name := "jerkson"
 
 organization := "com.github.tkawachi"
 
-version := "0.6.4"
+version := "0.6.5"
 
 licenses := Seq(
   ("MIT", url("http://codahale.com/mit.txt"))
@@ -20,7 +20,7 @@ scmInfo := Some(
 )
 
 /* scala versions and options */
-scalaVersion := "2.10.2"
+scalaVersion := "2.10.3"
 
 // These options will be used for *all* versions.
 scalacOptions ++= Seq(
