@@ -55,6 +55,8 @@ scalacOptions <++= scalaVersion map { sv =>
 
 javacOptions ++= Seq("-Xlint:unchecked", "-Xlint:deprecation")
 
+javacOptions ++= Seq("-source", "1.6", "-target", "1.6")
+
 /* dependencies */
 libraryDependencies ++= Seq(
   "com.fasterxml.jackson.core" % "jackson-core" % "2.0.2",
